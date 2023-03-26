@@ -8,7 +8,7 @@ const MyBuyers = () => {
     const [orders, setOrders] = React.useState([]);
 
     React.useEffect(() => {
-        fetch(`http://localhost:5000/buyers-orders/${user?.email}`, {
+        fetch(`https://hand-change.vercel.app/buyers-orders/${user?.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('access_token')}`
             },

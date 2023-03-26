@@ -13,7 +13,7 @@ const SingleProduct = ({ product }) => {
     const { data: seller_info } = useQuery({
         queryKey: ['seller'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/seller-info/${email}`, {
+            const res = await fetch(`https://hand-change.vercel.app/seller-info/${email}`, {
                 headers: {
                     authoraiton: `Bearer ${localStorage.getItem('access_token')}`
                 }

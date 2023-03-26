@@ -6,7 +6,7 @@ const useSeller = email => {
     const [sellerEmail, setSellerEmail] = useState('');
     useEffect(() => {
         if (email) {
-            fetch(`http://localhost:5000/users/seller/${email}`)
+            fetch(`https://hand-change.vercel.app/users/seller/${email}`)
                 .then(res => res.json())
                 .then(data => {
                     if (data) {

@@ -6,7 +6,7 @@ const AllBuyers = () => {
     const { data: buyers = [] } = useQuery({
         queryKey: ['buyers'],
         queryFn: async () => {
-            const response = await fetch(`http://localhost:5000/buyers`, {
+            const response = await fetch(`https://hand-change.vercel.app/buyers`, {
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('access_token')}`
                 },

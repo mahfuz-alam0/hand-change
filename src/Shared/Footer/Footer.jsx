@@ -9,7 +9,7 @@ const Footer = () => {
         <footer className="footer p-10 bg-gray-100 text-base-content">
             <div>
                 <img className='w-56' src="/logo.png" alt="" />
-                <p>Swap Hand Ltd.<br />All Right Reserved {year}</p>
+                <p>Hand-Change Ltd.<br />All Right Reserved {year}</p>
             </div>
             <div>
                 <span className="footer-title">Services</span>

@@ -7,7 +7,7 @@ const AllSeller = () => {
     const { data: sellers = [], refetch } = useQuery({
         queryKey: ['sellers'],
         queryFn: async () => {  
-            const response = await fetch(`http://localhost:5000/sellers`, {
+            const response = await fetch(`https://hand-change.vercel.app/sellers`, {
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('access_token')}`
                 },
@@ -19,7 +19,7 @@ const AllSeller = () => {
 
     const handleverify = (id) => { 
 
-        fetch(`http://localhost:5000/sellers/${id}`, {
+        fetch(`https://hand-change.vercel.app/sellers/${id}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('access_token')}`,
@@ -34,7 +34,7 @@ const AllSeller = () => {
     }
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/sellers/${id}`, {
+        fetch(`https://hand-change.vercel.app/sellers/${id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('access_token')}`,

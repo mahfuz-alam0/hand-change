@@ -22,7 +22,7 @@ const Navbar = () => {
 
     const menuItems = <React.Fragment>
         <li><NavLink className={`${({ isActive }) => isActive ? 'active' : undefined} logo_effect`} to="/home">Home</NavLink></li>
-        <li><NavLink className="logo_effect" to="/blog">Blog</NavLink></li>
+        
         {user?.uid ?
             <>
                 {
@@ -50,7 +50,7 @@ const Navbar = () => {
     </React.Fragment>
 
     return (
-        <div className="navbar bg-green-100 flex justify-between">
+        <div className="navbar bg-gray-100 flex justify-between">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">

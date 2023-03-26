@@ -13,7 +13,7 @@ const Myorder = ({ order }) => {
     const { productName, price, image, email, discription, condition, number, division, district } = product;
 
     React.useEffect(() => {
-        fetch(`http://localhost:5000/products/${productId}`, {
+        fetch(`https://hand-change.vercel.app/products/${productId}`, {
             headers: {
                 authoraiton: `Bearer ${localStorage.getItem('access_token')}`
             }
@@ -24,7 +24,7 @@ const Myorder = ({ order }) => {
     }, [productId])
 
     React.useEffect(() => {
-        fetch(`http://localhost:5000/seller-info/${email}`, {
+        fetch(`https://hand-change.vercel.app/seller-info/${email}`, {
             headers: {
                 authoraiton: `Bearer ${localStorage.getItem('access_token')}`
             }

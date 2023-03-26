@@ -5,7 +5,7 @@ const AllReports = () => {
     const [reports, setReports] = React.useState([]);
 
     React.useEffect(() => {
-        fetch('http://localhost:5000/report')
+        fetch('https://hand-change.vercel.app/report')
             .then(res => res.json())
             .then(data => setReports(data))
     }, [])

@@ -14,7 +14,7 @@ const Report = () => {
     const handlesubmit = (data) => {
         setLoggingIn(true);
 
-        fetch('http://localhost:5000/report', {
+        fetch('https://hand-change.vercel.app/report', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

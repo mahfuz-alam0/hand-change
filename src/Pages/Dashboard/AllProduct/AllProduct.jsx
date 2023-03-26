@@ -14,7 +14,7 @@ const AllProduct = () => {
     const { data: products = [], isLoading } = useQuery({
         queryKey: ['allProducts'],
         queryFn: async () => {
-            const response = await fetch(`http://localhost:5000/my-products/${email}`, {
+            const response = await fetch(`https://hand-change.vercel.app/my-products/${email}`, {
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('access_token')}`
                 },

@@ -41,7 +41,7 @@ const AddProduct = () => {
                 }
 
                 if (imgdata.success) {
-                    fetch("http://localhost:5000/products", {
+                    fetch("https://hand-change.vercel.app/products", {
                         method: "POST",
                         headers: {
                             'content-type': 'application/json',

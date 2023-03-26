@@ -47,12 +47,12 @@ const router = createBrowserRouter([
             {
                 path: "/category/:category",
                 element: <ProductByCategory />,
-                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.category}`)
+                loader: ({ params }) => fetch(`https://hand-change.vercel.app/category/${params.category}`)
             },
             
             {
                 path: "/payment/:id",
-                loader: ({ params }) => fetch(`http://localhost:5000/my-orders?id=${params.id}`),
+                loader: ({ params }) => fetch(`https://hand-change.vercel.app/my-orders?id=${params.id}`),
                 element: <Private><Payment /></Private>,
             },
             {

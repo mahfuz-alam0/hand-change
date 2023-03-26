@@ -18,7 +18,7 @@ const ProductModal = ({ product, setModal }) => {
 
 
     React.useEffect(() => {
-        fetch(`http://localhost:5000/seller-info/${email}`, {
+        fetch(`https://hand-change.vercel.app/seller-info/${email}`, {
             headers: {
                 authoraiton: `Bearer ${localStorage.getItem('access_token')}`
             }
@@ -52,7 +52,7 @@ const ProductModal = ({ product, setModal }) => {
             productName,
         }
 
-        fetch('http://localhost:5000/orders', {
+        fetch('https://hand-change.vercel.app/orders', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

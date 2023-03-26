@@ -16,7 +16,7 @@ const Payment = () => {
     const navigate = useNavigate();
     const { _id, productId, price, buyer,  } = data
     useEffect(() => {
-        fetch(`http://localhost:5000/products/${productId}`, {
+        fetch(`https://hand-change.vercel.app/products/${productId}`, {
             headers: {
                 authoraiton: `Bearer ${localStorage.getItem('access_token')}`
             }
@@ -34,7 +34,7 @@ const Payment = () => {
             buyer,
             orderId: _id
         }
-        fetch(`http://localhost:5000/payment-order`, {
+        fetch(`https://hand-change.vercel.app/payment-order`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

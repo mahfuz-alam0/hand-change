@@ -12,7 +12,7 @@ const Home = () => {
     const { data: products } = useQuery({
         queryKey: ['products'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/products`, {
+            const res = await fetch(`https://hand-change.vercel.app/products`, {
                 headers: {
                     authoraiton: `Bearer ${localStorage.getItem('access_token')}`
                 }

@@ -18,7 +18,7 @@ const Product = ({ product, setModal }) => {
 
 
     React.useEffect(() => {
-        fetch(`http://localhost:5000/seller-info/${email}`, {
+        fetch(`https://hand-change.vercel.app/seller-info/${email}`, {
             headers: {
                 authoraiton: `Bearer ${localStorage.getItem('access_token')}`
             }
@@ -74,9 +74,9 @@ const Product = ({ product, setModal }) => {
                     {isSeller ?
                         <>
                             {
-                                !isAdvertisement ? <Link to={`/push-advertise/${_id}`} className="btn btn-primary text-black hover:text-white hover:bg-gray-500 hover:border-gray-600 bg-green-200 border-green-400 btn-sm">
+                                !isAdvertisement ? <Link to={`/push-advertise/${_id}`} className="btn btn-primary text-black hover:text-white hover:bg-gray-500 hover:border-gray-600 bg-gray-200 border-gray-400 btn-sm">
                                     Push Now
-                                </Link> : <button className="btn btn-primary text-black hover:text-white hover:bg-green-500 hover:border-green-600 bg-green-200 border-green-400 btn-sm">
+                                </Link> : <button className="btn btn-primary text-black hover:text-white hover:bg-gray-500 hover:border-gray-600 bg-gray-200 border-gray-400 btn-sm">
                                     Pushed
                                 </button>
                             }
