@@ -17,7 +17,7 @@ const ChackoutForm = ({ data, setPayment, setTransectionId }) => {
 
     React.useEffect(() => {
         // Create PaymentIntent as soon as the page loads
-        fetch("https://swap-hand-server-hasibul240.vercel.app/create-payment-intent", {
+        fetch("http://localhost:5000/create-payment-intent", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -103,9 +103,9 @@ const ChackoutForm = ({ data, setPayment, setTransectionId }) => {
                     }}
                 />
                 {
-                    !loading ? <button className='mt-5 btn w-full text-black hover:text-white hover:bg-green-500 hover:border-green-600 bg-green-200 border-green-400' type="submit" disabled={!stripe || !clientSecret}>
+                    !loading ? <button className='mt-5 btn w-full text-black hover:text-white hover:bg-gray-500 hover:border-gray-600 bg-grgrayeen-200 border-gray-400' type="submit" disabled={!stripe || !clientSecret}>
                         confirm payment
-                    </button> : <button className='mt-5 btn w-full text-black hover:text-white hover:bg-green-200 hover:border-green-600 bg-green-200 border-green-400'>
+                    </button> : <button className='mt-5 btn w-full text-black hover:text-white hover:bg-gray-200 hover:border-gray-600 bg-gray-200 border-gray-400'>
                         <Loading />
                     </button>
                 }

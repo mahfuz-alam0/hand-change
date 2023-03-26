@@ -7,7 +7,7 @@ const AllSeller = () => {
     const { data: sellers = [], refetch } = useQuery({
         queryKey: ['sellers'],
         queryFn: async () => {  
-            const response = await fetch(`https://swap-hand-server-hasibul240.vercel.app/sellers`, {
+            const response = await fetch(`http://localhost:5000/sellers`, {
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('access_token')}`
                 },
@@ -19,7 +19,7 @@ const AllSeller = () => {
 
     const handleverify = (id) => { 
 
-        fetch(`https://swap-hand-server-hasibul240.vercel.app/sellers/${id}`, {
+        fetch(`http://localhost:5000/sellers/${id}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('access_token')}`,
@@ -34,7 +34,7 @@ const AllSeller = () => {
     }
 
     const handleDelete = (id) => {
-        fetch(`https://swap-hand-server-hasibul240.vercel.app/sellers/${id}`, {
+        fetch(`http://localhost:5000/sellers/${id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('access_token')}`,
@@ -71,14 +71,14 @@ const AllSeller = () => {
                                 <td>{seller.email}</td>
                                 {
                                     seller.isVarify ? <td>
-                                        <span className="badge bg-green-500 badge-md">Varified</span>
+                                        <span className="badge bg-gray-500 badge-md">Varified</span>
                                     </td> : <td className="text-red-500">
                                         <span className="badge bg-red-500 badge-md">Not Varified</span>
                                         
                                     </td>
                                 }
                                 <td>
-                                    <button onClick={()=>handleverify(seller._id)} className="btn bg-green-500 hover:bg-green-700 text-white btn-sm">Verify</button>
+                                    <button onClick={()=>handleverify(seller._id)} className="btn bg-gray-500 hover:bg-gray-700 text-white btn-sm">Verify</button>
                                 </td>
                                 <td>
                                     <button onClick={()=>handleDelete(seller._id)} className='btn btn-sm bg-red-500 hover:bg-red-700 text-white'>delete</button>

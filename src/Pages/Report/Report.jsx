@@ -14,7 +14,7 @@ const Report = () => {
     const handlesubmit = (data) => {
         setLoggingIn(true);
 
-        fetch('https://swap-hand-server-hasibul240.vercel.app/report', {
+        fetch('http://localhost:5000/report', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ const Report = () => {
 
     return (
         <div className='h-[500px] flex justify-center items-center'>
-            <div className='bg-green-100 rounded-xl drop-shadow-md w-full p-7'>
+            <div className='bg-gray-100 rounded-xl drop-shadow-md w-full p-7'>
                 <h2 className='text-3xl text-center'>Login</h2>
                 <form onSubmit={handleSubmit(handlesubmit)}>
 

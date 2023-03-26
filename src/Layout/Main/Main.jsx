@@ -5,7 +5,7 @@ import Navbar from '../../Shared/Navbar/Navbar';
 
 const Main = () => {
     return (
-        <div className='bg-green-200'>
+        <div className='bg-gray-200'>
             <Navbar />
             <div className='md:mx-5'>
                 <Outlet />

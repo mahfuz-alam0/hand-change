@@ -18,7 +18,7 @@ const Product = ({ product, setModal }) => {
 
 
     React.useEffect(() => {
-        fetch(`https://swap-hand-server-hasibul240.vercel.app/seller-info/${email}`, {
+        fetch(`http://localhost:5000/seller-info/${email}`, {
             headers: {
                 authoraiton: `Bearer ${localStorage.getItem('access_token')}`
             }
@@ -38,7 +38,7 @@ const Product = ({ product, setModal }) => {
     }, [seller_info]);
 
     return (
-        <div className="w-full card card-compact bg-green-100 shadow-xl">
+        <div className="w-full card card-compact bg-gray-100 shadow-xl">
             <figure><img src={image} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{productName}</h2>
@@ -56,7 +56,7 @@ const Product = ({ product, setModal }) => {
                         </div>
                         <div>
                             <p className='text-sm font-semibold'>{seller_name}</p>
-                            {
+                            {/* {
                                 isvarify ? <>
                                     <div className='flex items-center'>
                                         <div className="avatar">
@@ -68,13 +68,13 @@ const Product = ({ product, setModal }) => {
                                     </div>
 
                                 </> : <p className='text-md text-semibold text-red-500'>Not Varified</p>
-                            }
+                            } */}
                         </div>
                     </div>
                     {isSeller ?
                         <>
                             {
-                                !isAdvertisement ? <Link to={`/push-advertise/${_id}`} className="btn btn-primary text-black hover:text-white hover:bg-green-500 hover:border-green-600 bg-green-200 border-green-400 btn-sm">
+                                !isAdvertisement ? <Link to={`/push-advertise/${_id}`} className="btn btn-primary text-black hover:text-white hover:bg-gray-500 hover:border-gray-600 bg-green-200 border-green-400 btn-sm">
                                     Push Now
                                 </Link> : <button className="btn btn-primary text-black hover:text-white hover:bg-green-500 hover:border-green-600 bg-green-200 border-green-400 btn-sm">
                                     Pushed
@@ -83,7 +83,7 @@ const Product = ({ product, setModal }) => {
                             
                         </>
                         :
-                        <label onClick={() => setModal(product)} htmlFor="order-modal" className="btn btn-primary text-black hover:text-white hover:bg-green-500 hover:border-green-600 bg-green-200 border-green-400 btn-sm">
+                        <label onClick={() => setModal(product)} htmlFor="order-modal" className="btn btn-primary text-black hover:text-white hover:bg-gray-500 hover:border-gray-600 bg-gray-200 border-gray-400 btn-sm">
                             Order Now
                         </label>
                     }

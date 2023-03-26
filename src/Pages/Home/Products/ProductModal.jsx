@@ -18,7 +18,7 @@ const ProductModal = ({ product, setModal }) => {
 
 
     React.useEffect(() => {
-        fetch(`https://swap-hand-server-hasibul240.vercel.app/seller-info/${email}`, {
+        fetch(`http://localhost:5000/seller-info/${email}`, {
             headers: {
                 authoraiton: `Bearer ${localStorage.getItem('access_token')}`
             }
@@ -52,7 +52,7 @@ const ProductModal = ({ product, setModal }) => {
             productName,
         }
 
-        fetch('https://swap-hand-server-hasibul240.vercel.app/orders', {
+        fetch('http://localhost:5000/orders', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -73,7 +73,7 @@ const ProductModal = ({ product, setModal }) => {
             <input type="checkbox" id="order-modal" className="modal-toggle" />
             <div className="modal">
                 <div className="modal-box">
-                    <div className="w-full card card-compact bg-green-100 shadow-xl">
+                    <div className="w-full card card-compact bg-gray-100 shadow-xl">
                         <figure><img src={image} alt="Shoes" /></figure>
                         <div className="card-body">
                             <h2 className="card-title">{productName}</h2>
@@ -91,19 +91,7 @@ const ProductModal = ({ product, setModal }) => {
                                     </div>
                                     <div>
                                         <p className='text-sm font-semibold'>{seller_name}</p>
-                                        {
-                                            isvarify ? <>
-                                                <div className='flex items-center'>
-                                                    <div className="avatar">
-                                                        <div className="w-5 rounded-full mr-1">
-                                                            <img src='/tick.png' alt='' />
-                                                        </div>
-                                                    </div>
-                                                    <p className='text-sm font-semibold text-green-500'>Verified</p>
-                                                </div>
-
-                                            </> : <p className='text-md text-semibold text-red-500'>Not Varified</p>
-                                        }
+                                        
                                     </div>
                                 </div>
                                 <form className='w-full' onSubmit={handleSubmit(handleOrder)}>
@@ -135,10 +123,10 @@ const ProductModal = ({ product, setModal }) => {
                                         {errors.number && <p className='text-red-600'>{errors.number?.message}</p>}
                                     </div>
 
-                                    <input className='btn text-black hover:text-white hover:bg-green-500 hover:border-green-600 bg-green-200 border-green-400 w-full' value="Place Order" type="submit" />
+                                    <input className='btn text-black hover:text-white hover:bg-gray-500 hover:border-gray-600 bg-gray-200 border-gray-400 w-full' value="Place Order" type="submit" />
 
                                 </form>
-                                <label htmlFor="order-modal" className="w-full btn text-black hover:text-white hover:bg-green-500 hover:border-green-600 bg-green-200 border-green-400 btn-sm">
+                                <label htmlFor="order-modal" className="w-full btn text-black hover:text-white hover:bg-gray-500 hover:border-gray-600 bg-gray-200 border-gray-400 btn-sm">
                                     Cancel
                                 </label>
                             </div>

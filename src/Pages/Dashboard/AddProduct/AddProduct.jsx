@@ -41,7 +41,7 @@ const AddProduct = () => {
                 }
 
                 if (imgdata.success) {
-                    fetch("https://swap-hand-server-hasibul240.vercel.app/products", {
+                    fetch("http://localhost:5000/products", {
                         method: "POST",
                         headers: {
                             'content-type': 'application/json',
@@ -65,7 +65,7 @@ const AddProduct = () => {
 
     return (
         <div className='flex justify-center items-center ml-5 mt-5'>
-            <div className='bg-green-100 rounded-xl drop-shadow-md w-full p-7'>
+            <div className='bg-gray-100 rounded-xl drop-shadow-md w-full p-7'>
                 <h2 className='text-3xl text-center'>Add Product</h2>
                 <form onSubmit={handleSubmit(handleAddProduct)}>
                     <div className='lg:flex gap-5'>
@@ -102,15 +102,13 @@ const AddProduct = () => {
                                     {...register("category", { required: "Category is Required" })}
                                     defaultValue="select" className="select input-bordered w-full">
                                     <option disabled value='select'>Select One....</option>
-                                    <option value="CPU">CPU/Processor</option>
-                                    <option value="GPU">GPU/Graphic Card</option>
+                                    <option value="Laptop Screen">laptop Screen</option>
                                     <option value="Motherboard">Motherboard</option>
                                     <option value="HDD">HDD</option>
                                     <option value="SSD">SSD</option>
                                     <option value="RAM">RAM</option>
                                     <option value="PSW">PSU/Power Suplly</option>
                                     <option value="Colling">Colling Fan</option>
-                                    <option value="Cables">Connector Cables</option>
                                 </select>
                                 {errors.condition && <p className='text-red-500'>{errors.condition.message}</p>}
                             </div>

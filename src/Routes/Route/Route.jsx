@@ -1,14 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import DashboardLayout from "../../Layout/DashboardLayout/DashboardLayout";
 import Main from "../../Layout/Main/Main";
-import Blog from "../../Pages/Blog/Blog";
 import AddProduct from "../../Pages/Dashboard/AddProduct/AddProduct";
 import AllReports from "../../Pages/Dashboard/AdminRoute/Allreports/AllReports";
 import AllSeller from "../../Pages/Dashboard/AdminRoute/Allseller/AllSeller";
 import AllBuyers from "../../Pages/Dashboard/AdminRoute/Allusers/AllBuyers";
 import AllProduct from "../../Pages/Dashboard/AllProduct/AllProduct";
 import MyBuyers from "../../Pages/Dashboard/MyBuyers/MyBuyers";
-import PushAdvertise from "../../Pages/Dashboard/PushAdvertise/PushAdvertise";
 import Error404 from "../../Pages/Error404/Error404";
 import Home from "../../Pages/Home/Home";
 import Payment from "../../Pages/Home/Payment/Payment";
@@ -35,10 +33,6 @@ const router = createBrowserRouter([
                 element: <Home />,
             },
             {
-                path: "/blog",
-                element: <Blog />,
-            },
-            {
                 path: "/login",
                 element: <Login />,
             },
@@ -53,16 +47,12 @@ const router = createBrowserRouter([
             {
                 path: "/category/:category",
                 element: <ProductByCategory />,
-                loader: ({ params }) => fetch(`https://swap-hand-server-hasibul240.vercel.app/category/${params.category}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.category}`)
             },
-            {
-                path: "/push-advertise/:id",
-                loader: ({ params }) => fetch(`https://swap-hand-server-hasibul240.vercel.app/products/${params.id}`),
-                element: <Seller><PushAdvertise /></Seller>,
-            },
+            
             {
                 path: "/payment/:id",
-                loader: ({ params }) => fetch(`https://swap-hand-server-hasibul240.vercel.app/my-orders?id=${params.id}`),
+                loader: ({ params }) => fetch(`http://localhost:5000/my-orders?id=${params.id}`),
                 element: <Private><Payment /></Private>,
             },
             {

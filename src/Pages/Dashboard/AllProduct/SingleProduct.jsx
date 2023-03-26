@@ -1,6 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const SingleProduct = ({ product }) => {
    
@@ -14,7 +13,7 @@ const SingleProduct = ({ product }) => {
     const { data: seller_info } = useQuery({
         queryKey: ['seller'],
         queryFn: async () => {
-            const res = await fetch(`https://swap-hand-server-hasibul240.vercel.app/seller-info/${email}`, {
+            const res = await fetch(`http://localhost:5000/seller-info/${email}`, {
                 headers: {
                     authoraiton: `Bearer ${localStorage.getItem('access_token')}`
                 }
@@ -33,7 +32,7 @@ const SingleProduct = ({ product }) => {
     }, [seller_info]);
 
     return (
-        <div className="w-full card card-compact bg-green-100 shadow-xl">
+        <div className="w-full card card-compact bg-gray-100 shadow-xl">
             <figure><img src={image} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{productName}</h2>
@@ -51,29 +50,8 @@ const SingleProduct = ({ product }) => {
                         </div>
                         <div>
                             <p className='text-sm font-semibold'>{seller_name}</p>
-                            {
-                                isvarify ? <>
-                                    <div className='flex items-center'>
-                                        <div className="avatar">
-                                            <div className="w-5 rounded-full mr-1">
-                                                <img src='/tick.png' alt='' />
-                                            </div>
-                                        </div>
-                                        <p className='text-sm font-semibold text-green-500'>Verified</p>
-                                    </div>
-
-                                </> : <p className='text-md text-semibold text-red-500'>Not Varified</p>
-                            }
                         </div>
                     </div>
-                    {
-                        !isAdvertisement ? <Link to={`/push-advertise/${_id}`} className="btn btn-primary text-black hover:text-white hover:bg-green-500 hover:border-green-600 bg-green-200 border-green-400 btn-sm">
-                            Push Now
-                        </Link> : <button className="btn btn-primary text-black hover:text-white hover:bg-green-500 hover:border-green-600 bg-green-200 border-green-400 btn-sm">
-                            Pushed
-                        </button>
-                    }
-
                 </div>
             </div>
         </div>

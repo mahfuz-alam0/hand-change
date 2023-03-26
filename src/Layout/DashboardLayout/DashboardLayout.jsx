@@ -21,7 +21,7 @@ const DashboardLayout = () => {
                 <div className="min-h-min drawer-content flex-col items-center ">
                     <Outlet />
                 </div>
-                <div className="drawer-side h-[1200px]  bg-green-100">
+                <div className="drawer-side h-[1200px]  bg-gray-100">
                     <label htmlFor="dashbord-drawer" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 text-base-content">
                         {

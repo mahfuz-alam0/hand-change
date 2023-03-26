@@ -25,9 +25,7 @@ const Products = ({ products }) => {
                         <li><Link to='/category/Cables' className='btn-xs'>Connector Cables</Link></li>
                     </ul>
                 </div>
-                <div>
-                    <Link to='/report' className='btn'>Report</Link>
-                </div>
+                
             </div>
             <div className='grid gap-5 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 grid-cols-1 my-5'>
                 {

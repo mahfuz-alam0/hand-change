@@ -6,7 +6,7 @@ const MyBuyer = ({ order }) => {
     const { payment, price, address, buyer, productName } = order;
     
     React.useEffect(() => {
-        fetch(`https://swap-hand-server-hasibul240.vercel.app/user/${buyer}`)
+        fetch(`http://localhost:5000/user/${buyer}`)
             .then(res => res.json())
             .then(data => setuser(data))
     }, [buyer])

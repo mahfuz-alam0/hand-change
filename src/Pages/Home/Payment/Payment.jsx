@@ -16,7 +16,7 @@ const Payment = () => {
     const navigate = useNavigate();
     const { _id, productId, price, buyer,  } = data
     useEffect(() => {
-        fetch(`https://swap-hand-server-hasibul240.vercel.app/products/${productId}`, {
+        fetch(`http://localhost:5000/products/${productId}`, {
             headers: {
                 authoraiton: `Bearer ${localStorage.getItem('access_token')}`
             }
@@ -34,7 +34,7 @@ const Payment = () => {
             buyer,
             orderId: _id
         }
-        fetch(`https://swap-hand-server-hasibul240.vercel.app/payment-order`, {
+        fetch(`http://localhost:5000/payment-order`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ const Payment = () => {
 
     return (
         <div className='min-h-[500px]'>
-            <div className='max-w-[500px] bg-green-100 my-5 rounded-lg mx-auto p-5'>
+            <div className='max-w-[500px] bg-gray-100 my-5 rounded-lg mx-auto p-5'>
                 <div className=''>
                     <p className="card-title text-center ">Product Name: {product.productName}</p>
                     <p className='text-lg font-semibold'>Price: ৳{price}</p>

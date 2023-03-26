@@ -64,7 +64,7 @@ const SignUp = () => {
 
     const save_user = (userDB) => {
 
-        fetch('https://swap-hand-server-hasibul240.vercel.app/users', {
+        fetch('http://localhost:5000/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -90,7 +90,7 @@ const SignUp = () => {
 
     return (
         <div className='h-[800px] flex justify-center items-center'>
-            <div className='bg-green-100 rounded-xl drop-shadow-md w-96 p-7'>
+            <div className='bg-gray-100 rounded-xl drop-shadow-md w-96 p-7'>
                 <h2 className='text-3xl text-center'>Sign Up</h2>
                 <form onSubmit={handleSubmit(handleSignUp)}>
                     <div className="form-control w-full ">

@@ -13,7 +13,7 @@ const Myorder = ({ order }) => {
     const { productName, price, image, email, discription, condition, number, division, district } = product;
 
     React.useEffect(() => {
-        fetch(`https://swap-hand-server-hasibul240.vercel.app/products/${productId}`, {
+        fetch(`http://localhost:5000/products/${productId}`, {
             headers: {
                 authoraiton: `Bearer ${localStorage.getItem('access_token')}`
             }
@@ -24,7 +24,7 @@ const Myorder = ({ order }) => {
     }, [productId])
 
     React.useEffect(() => {
-        fetch(`https://swap-hand-server-hasibul240.vercel.app/seller-info/${email}`, {
+        fetch(`http://localhost:5000/seller-info/${email}`, {
             headers: {
                 authoraiton: `Bearer ${localStorage.getItem('access_token')}`
             }
@@ -44,7 +44,7 @@ const Myorder = ({ order }) => {
 
     return (
         <div>
-            <div className="max-w-80 mx-5 card card-compact bg-green-100 shadow-xl">
+            <div className="max-w-80 mx-5 card card-compact bg-gray-100 shadow-xl">
                 <figure><img src={image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{productName}</h2>
@@ -63,7 +63,7 @@ const Myorder = ({ order }) => {
                             <div>
                                 <p className='text-sm font-semibold'>{seller_name}</p>
                                 {
-                                    isvarify ? <p className='text-sm font-semibold text-green-500'>Varified</p> :
+                                    isvarify ? <p className='text-sm font-semibold text-gray-500'>Varified</p> :
                                         isvarify ? <>
                                             <div className='flex items-center'>
                                                 <div className="avatar">
@@ -71,7 +71,7 @@ const Myorder = ({ order }) => {
                                                         <img src='/tick.png' alt='' />
                                                     </div>
                                                 </div>
-                                                <p className='text-sm font-semibold text-green-500'>Verified</p>
+                                                <p className='text-sm font-semibold text-gray-500'>Verified</p>
                                             </div>
 
                                         </> : <p className='text-md text-semibold text-red-500'>Not Varified</p>
@@ -79,9 +79,9 @@ const Myorder = ({ order }) => {
                             </div>
                         </div>
                         {
-                            !payment ? <Link to={`/payment/${orderId}`} className="btn btn-primary text-black hover:text-white hover:bg-green-500 hover:border-green-600 bg-green-200 border-green-400 btn-sm">
+                            !payment ? <Link to={`/payment/${orderId}`} className="btn btn-primary text-black hover:text-white hover:bg-gray-500 hover:border-gray-600 bg-gray-200 border-gray-400 btn-sm">
                                 pay now
-                            </Link> : <button className="btn btn-primary text-black hover:text-white hover:bg-green-500 hover:border-green-600 bg-green-200 border-green-400 btn-sm">Paid</button>
+                            </Link> : <button className="btn btn-primary text-black hover:text-white hover:bg-gray-500 hover:border-gray-600 bg-gray-200 border-gray-400 btn-sm">Paid</button>
                         }
 
                     </div>

@@ -32,7 +32,7 @@ const SocialLogin = () => {
 
     const save_user = (userDB) => {
 
-        fetch('https://swap-hand-server-hasibul240.vercel.app/users/social', {
+        fetch('http://localhost:5000/users/social', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
